@@ -1,0 +1,12 @@
+# Logs
+*.log
+
+# Folders
+logs
+data
+
+## Python
+__pycache__
+.vscode
+.pytest_cache
+*.pyc

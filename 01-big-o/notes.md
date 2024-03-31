@@ -21,7 +21,7 @@ nums = [1,2,3,4,5,6,7]
 
 # Big O(n)
 
-O of n is always a straight line that we call "proportional" and it's when we pass in `n` to run it `n` times. `n` times ran represents the number of operations
+Big O of n, also "proportional", is always a straight line and it's when we pass in `n` to run it `n` times. `n` times ran represents the number of operations
 
 ```python
 # n
@@ -45,7 +45,7 @@ def print_nums(n):
 
 # Big O(n^2)
 
-In the following function, `print_nums(10)` would run 100 operations since it's double loop or `n * n = n^2` or `O(n^2)`
+Big O of n^2, also "loop within a loop" like the following function, `print_nums(10)` would run 100 operations since it's double loop or `n * n = n^2` or `O(n^2)`
 
 ```python
 def print_nums(n):
@@ -86,7 +86,7 @@ def add_nums(n):
 
 # Big O(log n)
 
-Big O of log n is efficiency through divide and conquer. In below list, the most efficient way to find 1 using `log n` is dividing the list in half three times: `[1,2,3,4]`, `[1,2]`, `[1]`. This is also read as `2^3 = 8` or `log₂8 = 3`
+Big O of log n, also "divide and conquer", is efficiency through, well... Divide and conquer and is frequently seen in sorting algorithms. In below list, the most efficient way to find 1 using `log n` is dividing the list in half three times: `[1,2,3,4]`, `[1,2]`, `[1]`. This is also read as `2^3 = 8` or `log₂8 = 3`
 
 ```python
 nums = [1,2,3,4,5,6,7,8]
@@ -114,3 +114,39 @@ def print_nums_squared(a, b):
             print(i, j)
     # results in O(a * b) NOT O(n)
 ```
+
+# Big O in Lists
+
+Both `.append()` and `.pop()` to the end of the list requires no reindexing of the elements or rearrangement, requiring only a single operation so this is an `O(1)` time complexity
+
+```python
+nums = [11,3,23,7]
+nums.append(17)
+nums.pop()
+```
+
+The opposite, where the first index is popped or inserted, is `O(n)` since there's a linear reindexing of the elements and multiple operations occurring if 0 is removed to reindex 3 to index 0 on pop or 3 to index 1 on reinsertion and for the rest of the list
+
+```python
+nums = [11,3,23,7]
+nums.pop(0)
+nums.insert(0, 11)
+```
+
+In other scenarios such as inserting on index 1, it remains `O(n)` and not `O(1/2n)` just because only half the list will be reindexed since it's Big O which measures worst case, not average case. Even then, 1/2 is constant and in Big O, constants can be dropped for simplification. This, of course, means that full iteration is also `O(n)`
+
+```python
+nums = [11,3,23,7]
+nums.insert(1, 'Hi')
+```
+
+# Conclusion
+
+Suppose x-axis is `n` from 0 to 100 and y-axis is operations in the **[Big O data structure cheatsheet](https://www.bigocheatsheet.com/)**, then:
+
+- O(n^2) **loop within a loop** = 100^2 or 10,000 operations
+- O(n) **proportion** = 100 operations
+- O(log n) **divide and conquer** = 2^6.64 or ~7 operations
+- O(1) **constant** = 1 operations
+
+![Big O](./big_o.png)

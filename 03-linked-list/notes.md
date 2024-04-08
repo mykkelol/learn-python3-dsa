@@ -17,3 +17,98 @@ Linked list can achieve effciency for certain scenarios. For example:
 - _lookup is_ `O(n)` due to iteration for both the index and the value. This differs from list since it can be O(1) when looking by index
 
 ![Big O in Linked List](./linkedlist_big_o.png)
+
+# LL under the hood
+
+Technically, a LL node is a just dictionary that includes both the pointer and the value. The following illustrates LL with head of 20 and tail of 5 under the hood. Actual LL syntax would be encapsulated in class (see [LL Constructor](#ll-constructor))
+
+```python
+head = {
+    "value": 20,
+    "next": {
+        "value": 10,
+        "next": {
+            "value": 5,
+            "next": None
+        }
+    }
+}
+
+print(head['next']['value']) # 10
+print(my_ll.head.next.value) # actual LL lookup syntax
+```
+
+# LL Constructor
+
+LL always starts with the following classes and methods. Notice how they all accept value and create a new node
+
+- `class LinkedList`
+  - `init(self, value)`: create node and initializes LL
+  - `append(self, value)`: create node and add node to end
+  - `prepend(self, value)`: create node and add node to start
+  - `insert(self, value, index)`: create node and insert at given index
+- `class Node`
+  - `init(self, value)`: create a dict with two properties; value and next
+
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+
+    def append(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
+        return True
+
+    def print_list(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = self.next
+
+my_linked_list = LinkedList(4)
+print(my_linked_list.head.value)
+print(my_linked_list.length)
+```
+
+# LL pop
+
+Pop in LL is much more complex as it is O(n) to remove the tail and reassign the new tail. There are two edge cases:
+
+- **LL is empty**: The first condition exits the operation completely to satisfy empty LL
+- **LL with single node**: The second condition resets LL to empty after removing the single node with `self.length` decrement
+- **LL more than one node**: The second condition resets LL to empty after removing the single node with `self.length` decrement
+
+Overall, pop will iterate until reaching the last node and removes the last node by setting `pre` to `None`
+
+```python
+def pop(self, value):
+    if self.length == 0:
+        return None
+    temp = self.head
+    pre = self.head
+    while temp is not None:
+        pre = temp
+        temp = self.next
+    self.tail = pre
+    self.tail.next = None
+    self.length -= 1
+    if self.length == 0:
+        self.head = None
+        self.tail = None
+    return temp
+```

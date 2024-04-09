@@ -96,7 +96,7 @@ Pop in LL is much more complex as it is O(n) to remove the tail and reassign the
 Overall, pop will iterate until reaching the last node and removes the last node by setting `pre` to `None`
 
 ```python
-def pop(self, value):
+def pop(self):
     if self.length == 0:
         return None
     temp = self.head
@@ -111,4 +111,59 @@ def pop(self, value):
         self.head = None
         self.tail = None
     return temp
+```
+
+# LL prepend, pop_first, get, set, insert
+
+```python
+def prepend(self, value):
+    new_node = Node(value)
+    if self.length == 0:
+        self.head = new_node
+        self.tail = new_node
+    else:
+        new_node.next = self.head
+        self.head = new_node
+    self.length += 1
+    return True
+
+def pop_first(self, value):
+    if self.length == 0:
+        return None
+    temp = self.head
+    self.head = self.head.next
+    temp.next = None
+    self.length -= 1
+    if self.length == 0:
+        self.tail = None
+    return temp
+
+def get(self, index):
+    if index < 0 or index >= self.length:
+        return None
+    temp = self.head
+    for _ in range(index):
+        temp = temp.next
+    return temp
+
+def set_value(self, index, value):
+    temp = self.get(index)
+    if temp:
+        temp.value = value
+        return True
+    return False
+
+def insert(self, index, value):
+    if index < 0 or index >= self.length:
+        return None
+    if index == 0:
+        self.prepend(value)
+    if index == self.length:
+        self.append(value)
+    new_node = Node(value)
+    temp = self.get(index - 1)
+    new_node.next = temp.next
+    temp.next = new_node
+    self.length += 1
+    return True
 ```

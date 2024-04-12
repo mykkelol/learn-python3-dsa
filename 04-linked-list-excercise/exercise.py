@@ -76,9 +76,9 @@ class LinkedList:
         if index < 0 or index >= self.length:
             return None
         if index == 0:
-            self.prepend(value)
-        if index == self.length - 1:
-            self.append(value)
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
         new_node = Node(value)
         temp = self.get(index - 1)
         new_node.next = temp.next

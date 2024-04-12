@@ -157,9 +157,9 @@ def insert(self, index, value):
     if index < 0 or index >= self.length:
         return None
     if index == 0:
-        self.prepend(value)
+        return self.prepend(value)
     if index == self.length:
-        self.append(value)
+        return self.append(value)
     new_node = Node(value)
     temp = self.get(index - 1)
     new_node.next = temp.next

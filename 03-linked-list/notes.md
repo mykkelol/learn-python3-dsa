@@ -103,7 +103,7 @@ def pop(self):
     pre = self.head
     while temp is not None:
         pre = temp
-        temp = self.next
+        temp = temp.next
     self.tail = pre
     self.tail.next = None
     self.length -= 1

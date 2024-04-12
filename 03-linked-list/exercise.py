@@ -48,7 +48,7 @@ class LinkedList:
             return None
         temp = self.head
         pre = self.head
-        while temp is not None:
+        while temp.next:
             pre = temp
             temp = temp.next
         self.tail = pre

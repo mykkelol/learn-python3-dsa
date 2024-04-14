@@ -154,8 +154,8 @@ def set_value(self, index, value):
     return False
 
 def insert(self, index, value):
-    if index < 0 or index >= self.length:
-        return None
+    if index < 0 or index > self.length:
+        return False
     if index == 0:
         return self.prepend(value)
     if index == self.length:

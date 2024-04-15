@@ -69,8 +69,10 @@ class LinkedList:
     
     def set_value(self, index, value):
         temp = self.get(index)
+        if temp is None:
+            return False
         temp.value = value
-        return temp
+        return True
     
     def insert(self, index, value):
         if index < 0 or index > self.length:

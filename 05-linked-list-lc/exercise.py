@@ -36,7 +36,42 @@ class LinkedList:
             if slow == fast:
                 return True
         return False
-
+    
+    def find_kth_from_end(self, k):
+        if k <= 0:
+            return None
+        if k == 1:
+            return self.tail
+        slow = fast = self.head
+        for _ in range(k):
+            if fast is None:
+                return None
+            fast = fast.next
+        while fast:
+            fast = fast.next
+            slow = slow.next
+        return slow
+    
+    def partition_list(self, x):
+        current = self.head
+        if current is None:
+            return None
+        dummy1 = Node(0)
+        dummy2 = Node(0)
+        prev1 = dummy1
+        prev2 = dummy2
+        while current:
+            if current.value < x:
+                prev1.next = current
+                prev1 = current
+            else:
+                prev2.next = current
+                prev2 = current
+            current = current.next
+        prev1.next = None
+        prev2.next = None
+        prev1.next = dummy2.next
+        self.head = dummy1.next
 
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)

@@ -73,6 +73,21 @@ class LinkedList:
         prev1.next = dummy2.next
         self.head = dummy1.next
 
+    def remove_duplicates(self):
+        if self.head is None:
+            return None
+        current = self.head
+        prev = None
+        values = set()
+        while current:
+            if current.value in values:
+                prev.next = current.next
+                self.length -= 1
+            else:
+                values.add(current.value)
+                prev = current
+            current = current.next
+
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.append(3)
@@ -80,3 +95,6 @@ my_linked_list.append(4)
 my_linked_list.append(5)
 
 print(my_linked_list.find_middle_node().value)
+print(my_linked_list.has_loop())
+print(my_linked_list.find_kth_from_end().value)
+print(my_linked_list.remove_duplicates())

@@ -88,6 +88,14 @@ class LinkedList:
                 prev = current
             current = current.next
 
+    def binary_to_decimal(self):
+        num = 0
+        current = self.head
+        while current:
+            num = num * 2 + current.value
+            current = current.next
+        return num
+
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.append(3)

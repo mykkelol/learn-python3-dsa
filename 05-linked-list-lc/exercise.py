@@ -95,6 +95,27 @@ class LinkedList:
             num = num * 2 + current.value
             current = current.next
         return num
+    
+    def reverse_between(self, start_index, end_index):
+        if self.length <= 1:
+            return
+        
+        dummy_node = Node(0)
+        dummy_node.next = self.head
+        previous_node = dummy_node
+        
+        for _ in range(start_index):
+            previous_node = previous_node.next
+        
+        current_node = previous_node.next
+        
+        for _ in range(end_index - start_index):
+            node_to_move = current_node.next
+            current_node.next = node_to_move.next
+            node_to_move.next = previous_node.next
+            previous_node.next = node_to_move
+    
+        self.head = dummy_node.next
 
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)

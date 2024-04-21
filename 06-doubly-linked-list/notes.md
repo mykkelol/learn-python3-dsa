@@ -7,18 +7,18 @@ Doubly linked list is just a singular linked list with pointers that also goes b
 In DLL constructors and DLL node constructor, not much change except again, reverse pointers:
 
 ```python
-    class Node:
-        def __init__(self, value):
-            self.value = value
-            self.next = None
-            self.prev = None
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None
 
-    class DoubleLinkedList:
-        def __init__(self, value):
-            new_node = Node(value)
-            self.head = new_node
-            self.tail = new_node
-            self.length = 0
+class DoubleLinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 0
 ```
 
 # Doubly Linked List Append
@@ -26,15 +26,35 @@ In DLL constructors and DLL node constructor, not much change except again, reve
 Doubly linked list append is similar to singular linked list with exception that after appending, the new node needs to set previous to the current tail through `new_node.prev = self.tail` prior to setting itself as the tail
 
 ```python
-    def append(self, value):
-        new_node = Node(value)
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            self.tail.next = new_node
-            new_node.prev =  self.tail
-            self.tail = new_node
-        self.length += 1
-        return True
+def append(self, value):
+    new_node = Node(value)
+    if self.head is None:
+        self.head = new_node
+        self.tail = new_node
+    else:
+        self.tail.next = new_node
+        new_node.prev =  self.tail
+        self.tail = new_node
+    self.length += 1
+    return True
+```
+
+# Doubly Linked List Pop
+
+In singular, pop is O(n) but is O(1) in doubly since we're given `self.tail.prev`
+
+```python
+def pop(self):
+    if self.length == 0:
+        return None
+    temp = self.tail
+    if self.length == 1:
+        self.head = None
+        self.tail = None
+    else:
+        self.tail = self.tail.prev
+        self.tail.next = None
+        temp.prev = None
+    self.length -= 1
+    return temp
 ```

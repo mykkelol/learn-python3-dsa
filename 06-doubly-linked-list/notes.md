@@ -39,7 +39,7 @@ def append(self, value):
     return True
 ```
 
-# Doubly Linked List Pop
+# Doubly Linked List Methods
 
 In singular, pop is O(n) but is O(1) in doubly since we're given `self.tail.prev`
 
@@ -57,4 +57,16 @@ def pop(self):
         temp.prev = None
     self.length -= 1
     return temp
+
+def prepend(self, value):
+    new_node = Node(value)
+    if self.head is None:
+        self.head = new_node
+        self.tail = new_node
+    else:
+        new_node.next = self.head
+        self.head.prev = new_node
+        self.head = new_node
+    self.length += 1
+    return True
 ```

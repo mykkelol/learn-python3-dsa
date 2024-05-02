@@ -105,11 +105,11 @@ def set_value(self, index, value):
     return False
 
 def insert(self, index, value):
-    if index < 0 or index >= self.length:
+    if index < 0 or index > self.length:
         return False
     if index == 0:
         return self.prepend(value)
-    if index == self.length - 1:
+    if index == self.length:
         return self.append(value)
 
     new_node = Node(value)

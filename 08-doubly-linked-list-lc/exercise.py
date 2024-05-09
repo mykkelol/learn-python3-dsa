@@ -143,6 +143,11 @@ class DoublyLinkedList:
             front = front.next
             back = back.prev
         return True
+    
+    def swap_pairs(self):
+        pass
+
+        return True
         
     def print_list(self):
         temp = self.head
@@ -154,5 +159,5 @@ my_list = DoublyLinkedList(1)
 my_list.append(2)
 my_list.append(3)
 my_list.append(4)
-my_list.reverse()
+my_list.swap_pairs()
 my_list.print_list()

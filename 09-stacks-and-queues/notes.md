@@ -60,7 +60,7 @@ class LinkedList:
 
 Unlike stack, which adds and removes on the same "in", a **queue** is when something can be added to on one end (`enqueue`) but is removed on the other end (`dequeue`). Queue is like a line of people below where first person that went in the last is the first person out (i.e. `FIFO`)
 
-![Queue with a line](./stack_in_browser.png)
+![Queue with a line](./queue_fifo.png)
 
 In a List, we couldn't achieve O(1) in queue since only adding/removing on one end can be O(1) would result in adding/removing on the other end as O(N)
 

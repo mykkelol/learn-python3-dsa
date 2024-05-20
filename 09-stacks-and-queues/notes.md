@@ -1,6 +1,6 @@
 # Stack
 
-- For something to be a **stack**, it has to be something that we can add to or remove from the same "in". Stack is like the can of tennis balls below where for the first ball that went in to come out, all the balls after it would need to come out first (i.e. `LIFO`)
+For something to be a **stack**, it has to be something that we can add to or remove from the same "in". Stack is like the can of tennis balls below where for the first ball that went in to come out, all the balls after it would need to come out first (i.e. `LIFO`)
 
 ![Stack with Tennis Can](./stack_tennis_Can.png)
 
@@ -55,3 +55,13 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 ```
+
+# Queue
+
+Unlike stack, which adds and removes on the same "in", a **queue** is when something can be added to on one end (`enqueue`) but is removed on the other end (`dequeue`). Queue is like a line of people below where first person that went in the last is the first person out (i.e. `FIFO`)
+
+![Queue with a line](./stack_in_browser.png)
+
+In a List, we couldn't achieve O(1) in queue since only adding/removing on one end can be O(1) would result in adding/removing on the other end as O(N)
+
+In a Linked List, O(1) can be achieved if `dequeue` on the the tail and `enqueue` on the head since enqueue on the tail would result in O(N). In this scenario, head is `first` and `last`

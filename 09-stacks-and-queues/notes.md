@@ -2,7 +2,7 @@
 
 For something to be a **stack**, it has to be something that we can add to or remove from the same "in". Stack is like the can of tennis balls below where for the first ball that went in to come out, all the balls after it would need to come out first (i.e. `LIFO`)
 
-![Stack with Tennis Can](./stack_tennis_Can.png)
+![Stack with Tennis Can](./stack_tennis_can.png)
 
 - In **software engineering**, this concept is commonly seen in back paging of browser history. In the example below (e.g. pages visits may start at FB then YT, IG, and G). To get back to the first visted page, FB, we'd need to back three times (again, `LIFO`)
 

@@ -64,7 +64,7 @@ Unlike stack, which adds and removes on the same "in", a **queue** is when somet
 
 In a List, we couldn't achieve O(1) in queue since only adding/removing on one end can be O(1) would result in adding/removing on the other end as O(N)
 
-In a Linked List, adding/removing queue can achieve O(1) if `dequeue` occurs at the the tail and `enqueue` occurs at the head since enqueue on the tail would result in O(N). Thus, `self.head` is `self.first` and `self.tail` is `self.last`.
+In a Linked List, queue can achieve O(1) when adding or removing if `dequeue` occurs at the head and `enqueue` occurs at the tail since dequeue on the tail would result in O(N). Lastly, `self.head` is `self.first` and `self.tail` is `self.last` or better yet, dequeue at first and enqueue at last.
 
 # Queue Constructor
 
@@ -91,4 +91,17 @@ class LinkedList:
             self.last = new_node
         self.length += 1
         return True
+
+    def dequeue(self):
+        if self.length == 0:
+            return None
+        temp = self.first
+        if self.length == 1
+            self.first = None
+            self.last = None
+        else:
+            self.first = self.first.next
+            temp.next = None
+        self.length -= 1
+        return temp
 ```

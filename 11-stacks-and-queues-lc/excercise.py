@@ -10,3 +10,14 @@ class Stack:
             return None
         else:
             return self.stack_list.pop()
+        
+def is_balanced_parentheses(parens):
+    stack = Stack()
+    for p in parens:
+        if p == '(':
+            stack.push(p)
+        elif p == ')':
+            if stack.is_empty():
+                return False
+            stack.pop()
+    return stack.is_empty()

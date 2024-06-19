@@ -33,3 +33,16 @@ In above examples, these are binary trees. However, trees don't have to binary a
 Every node in a tree can only have one `Parent`. Parent in binary trees can have two `Children`. If parents have no children, these nodes are a `leaf` like so:
 
 ![Tree Relationship](./tree-relationship.png)
+
+# Binary Search Trees
+
+Binary search tree is when new nodes are added by the following conditions:
+
+- `Greater than` if a node is greater than the node before it, it must be added to the right
+- `Less than` if a node is less than the node before it, it must be added to the left
+
+If for instance a node exist already, then keep following down that node. For example, `18` is less than 47 so go to the left. Since there's a node there and is less than 21, then 18 will will be on the left of 21.
+
+![Binary search tree](./binary-search-tree.png)
+
+Suppose we add `30` as well then this new node would be the right of 21.

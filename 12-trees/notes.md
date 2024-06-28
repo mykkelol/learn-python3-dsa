@@ -64,3 +64,21 @@ Ultimately, `there's no data structure that's the best in all situations` and he
 - imagine a scenario where we must add data to a data structure very quickly since incoming data comes in bursts but retrieval doesn't happen often and it's less important
 
 Given inserting is `O(1)` in Linked List, this scenario calls for Linked List since BST would be `O(log n)` here
+
+# BST Constructor
+
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+my_tree = BinarySearchTree()
+
+print(my_tree.root)
+```

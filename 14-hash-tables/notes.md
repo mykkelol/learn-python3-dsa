@@ -64,6 +64,25 @@ class HashTable:
                     return self.data_map[index][i][1]
         return None
 
+    [[['bolt', 100], ['bolt', 100]], None]
+
+    def get_keys(self):
+        keys = []
+        for address in self.data_map:
+            if address is not None:
+                for item in address:
+                    keys.append(item[0])
+        return keys
+
+    # len approach
+    def keys(self):
+        keys = []
+        for i in range(len(self.data_map)):
+            if self.data_map[i] is not None:
+                for j in range(len(self.data_map[i])):
+                    keys.append(self.data_map[i][j][0])
+        return keys
+
     def print_table(self):
         for i, val in enumerate(self.data_map):
             print(i, ": ", val)

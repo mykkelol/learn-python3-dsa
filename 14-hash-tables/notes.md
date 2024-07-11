@@ -99,3 +99,11 @@ my_hash_table.print_table()
 print(my_hash_table.get_item('lumber'))
 print(my_hash_table.keys())
 ```
+
+# HT Big O
+
+The implementation of hash table here breaks down to the following Big O time complexity. However, when using python built-in hash method, we can achieve O(1) since it utilizes dictionary and accessing items of an address is as simple as using a key-value pair retrieval
+
+- `set_item` is O(1)
+- `get_item` is O(n)
+- `get_keys` is O(n^2)

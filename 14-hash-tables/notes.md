@@ -107,3 +107,29 @@ The implementation of hash table here breaks down to the following Big O time co
 - `set_item` is O(1)
 - `get_item` is O(n)
 - `get_keys` is O(n^2)
+
+# Item in Common: Naive versus Efficient approach
+
+In programming, we can implement a solution that's naive that emphasizes simplicty, most direct, and doesn't consider complexity and efficiency. In the following example, the first function accomplishes the problem but results in `O(n^2)` whereas the second approach results in `O(n)` since the constant in 2n is dropped.
+
+```python
+[1,3,5]
+[2,4,5]
+
+def item_in_common(list1, list2):
+    for i in list1:
+        for j in list2:
+            if i == j:
+                return True
+    return False
+
+def item_in_common_efficient(list1, list2):
+    items = {}
+    for i in list1:
+        items[i] = True
+
+    for j in list2:
+        if i in items:
+            return True
+    return False
+```

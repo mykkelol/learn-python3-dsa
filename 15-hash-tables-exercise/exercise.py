@@ -14,6 +14,15 @@ class HashTable:
             self.data_map[index] = []
         self.data_map[index].append([key, value])
 
+    def get_item(self, key):
+        index = self.__hash(key)
+        if self.data_map[index] is not None:
+            for item in self.data_map[index]:
+                if item[0] == key:
+                    return item[1]
+        return None
+
+
     def print_table(self):
         for i, val in enumerate(self.data_map): 
             print(i, ": ", val)

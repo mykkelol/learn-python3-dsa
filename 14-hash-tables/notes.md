@@ -54,7 +54,6 @@ class HashTable:
         if self.data_map[index] == None:
             self.data_map[index] = []
         self.data_map[index].append([key, value])
-        return
 
     def get_item(self, key):
         index = self.__hash(key)

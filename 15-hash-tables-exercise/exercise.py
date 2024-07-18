@@ -21,7 +21,14 @@ class HashTable:
                 if item[0] == key:
                     return item[1]
         return None
-
+    
+    def get_keys(self):
+        all_keys = []
+        for address in self.data_map:
+            if address is not None:
+                for item in address:
+                    all_keys.append(item[0])
+        return all_keys
 
     def print_table(self):
         for i, val in enumerate(self.data_map): 

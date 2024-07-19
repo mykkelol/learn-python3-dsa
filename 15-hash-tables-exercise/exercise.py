@@ -34,4 +34,12 @@ class HashTable:
         for i, val in enumerate(self.data_map): 
             print(i, ": ", val)
       
-    
+
+def item_in_common(list1, list2):
+    items = {}
+    for i in list1:
+        items[i] = True
+    for j in list2:
+        if j in items:
+            return True
+    return False

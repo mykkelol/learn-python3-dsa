@@ -57,3 +57,15 @@ def find_duplicates(nums):
             numbers[n] = 1
     
     return duplicates
+
+def first_non_repeating_char(string):
+    letters = {}
+
+    for letter in string:
+        letters[letter] = letters.get(letter, 0) + 1
+
+    for letter in letters:
+        if letters[letter] == 1:
+            return letter
+        
+    return None

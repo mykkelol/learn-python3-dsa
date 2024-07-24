@@ -69,3 +69,16 @@ def first_non_repeating_char(string):
             return letter
         
     return None
+
+def group_anagrams(strings):
+    groups = {}
+
+    for string in strings:
+        canonical = ''.join(sorted(string))
+        
+        if canonical in groups:
+            groups[canonical].append(string)
+        else:
+            groups[canonical] = [string]
+    
+    return list(groups.values())

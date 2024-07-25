@@ -82,3 +82,13 @@ def group_anagrams(strings):
             groups[canonical] = [string]
     
     return list(groups.values())
+
+# return last index if duplicate found
+def two_sum(nums, target):
+    nums_map = {}
+    for i, num in enumerate(nums):
+        compliment = target - num
+        if compliment in nums_map:
+            return [nums_map[compliment], i]
+        nums_map[num] = i
+    return []

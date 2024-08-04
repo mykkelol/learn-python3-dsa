@@ -93,8 +93,9 @@ def two_sum(nums, target):
         nums_map[num] = i
     return []
 
+# [3,1,5,2,4,5,6], 7: 2,3
 def subarray_sum(nums, target):
-    sum_index = {0: -1}
+    sum_index = {}
     current_sum = 0
     for i, num in enumerate(nums):
         current_sum += num

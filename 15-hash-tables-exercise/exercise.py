@@ -93,9 +93,11 @@ def two_sum(nums, target):
         nums_map[num] = i
     return []
 
-# [3,1,5,2,4,5,6], 7: 2,3
+# solve with prefix sum
+# [1, 2, 3, 4, 5], 9 = [1, 3]
+# [4, 5, 3, 2, 1], 11 = [1, 3]
 def subarray_sum(nums, target):
-    sum_index = {}
+    sum_index = {0 : -1}
     current_sum = 0
     for i, num in enumerate(nums):
         current_sum += num

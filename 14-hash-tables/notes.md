@@ -132,3 +132,43 @@ def item_in_common_efficient(list1, list2):
             return True
     return False
 ```
+
+# Set
+
+Sets are similar to dictionaries except that instead of having key/value pairs, they only have the keys and not the values. The keys also must be unique. Like dictionaries, they're implemented using a hash table. Sets are useful for various operations such as finding the distinct elements in a collection and performing set operations such as union and intersection.
+
+They are defined by either using curly braces {} or the built-in set() function like this:
+
+```python
+# using {}
+my_set = {1, 2, 3, 4, 5}
+
+# using set()
+my_set = set([1, 2, 3, 4, 5])
+```
+
+Once a set is defined, you can perform various operations on it, such as adding or removing elements, finding the union, intersection, or difference of two sets, and checking if a given element is a member of a set. Some operations are:
+
+```python
+# If the number 6 is already in the set it will not be added again.
+my_set.add(6)
+
+# Use update with an iterable (e.g., list or tuple) to add multiple elements
+my_set.update([3, 4, 5, 6])
+
+my_set.remove(3)
+
+# union of two sets
+other_set = {3, 4, 5, 6}
+union_set = my_set.union(other_set)
+
+# intersection of two sets
+intersection_set = my_set.intersection(other_set)
+
+# difference between two sets
+difference_set = my_set.difference(other_set)
+
+# checking if an element is in a set
+if "hello" in my_set:
+    print("Found hello in my_set")
+```

@@ -105,3 +105,6 @@ def subarray_sum(nums, target):
             return [sum_index[current_sum - target] + 1, i]
         sum_index[current_sum] = i
     return []
+
+def remove_duplicates(nums):
+    return list(set(nums))

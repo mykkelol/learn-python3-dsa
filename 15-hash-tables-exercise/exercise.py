@@ -108,3 +108,6 @@ def subarray_sum(nums, target):
 
 def remove_duplicates(nums):
     return list(set(nums))
+
+def has_unique_chars(str):
+    return len(str) == len(set(str))

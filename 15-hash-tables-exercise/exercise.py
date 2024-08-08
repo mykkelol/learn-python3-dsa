@@ -111,3 +111,12 @@ def remove_duplicates(nums):
 
 def has_unique_chars(str):
     return len(str) == len(set(str))
+
+def find_pairs(arr1, arr2, target):
+    set1 = set(arr1)
+    pairs = []
+    for num in arr2:
+        compliment = target - num
+        if compliment in set1:
+            pairs.append((compliment, num))
+    return pairs

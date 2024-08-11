@@ -15,3 +15,24 @@ Actual graphs where vertices have many edges looks like so:
 ![Graphs](./graphs.png)
 
 When edges are bi-direction like above, they do not have arrows pointing to the vertex. If they are directional. then they do
+
+# Graphs representation
+
+The following are two ways to represent a graph:
+
+- Adjacency Matrix
+- Adjacency List
+
+#### Adjacency Matrix
+
+The following matrix's y-axis representing the vertices and x-axis representing the edges that connects the vertices.
+
+![Matrix bi-directional edges](./matrix_bidirectional.png)
+
+The following matrix has one vertex (A to B) that's directional:
+
+![Matrix directional edges](./matrix_directional.png)
+
+The following matrix edges have weighs which represents the values in the matrix cells:
+
+![Matrix weighted edges](./matrix_weighted.png)

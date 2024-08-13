@@ -23,7 +23,7 @@ The following are two ways to represent a graph:
 - Adjacency Matrix
 - Adjacency List
 
-#### Adjacency Matrix
+### Adjacency Matrix
 
 The following matrix's y-axis representing the vertices and x-axis representing the edges that connects the vertices.
 
@@ -36,3 +36,9 @@ The following matrix has one vertex (A to B) that's directional:
 The following matrix edges have weighs which represents the values in the matrix cells:
 
 ![Matrix weighted edges](./matrix_weighted.png)
+
+### Adjacency List
+
+Similar to **adjacency matrix**, which represents graphs in a matrix, **adjacency list** represents graphs in a dictionary. The keys are the vertices and the paired values are lists of its edges.
+
+![Adjacency List](./adjacency_list.png)

@@ -44,3 +44,10 @@ Similar to **adjacency matrix**, which represents graphs in a matrix, **adjacenc
 ![Adjacency List](./adjacency_list.png)
 
 # Graphs Big O
+
+When comparing **space complexity**:
+
+- `Adjacency matrix` stores all vertices that it's not connected to and makes it `O(|V|^2)`, number of vertices squared
+- `Adjacency list` stores only the edges it's connected to and makes it `O(|V|+|E|)`, number of vertices plus number of edges
+
+![Big O Graphs: Adjacency Matrix vs List](./matrix_v_list.png)

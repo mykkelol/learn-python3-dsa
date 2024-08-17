@@ -42,3 +42,5 @@ The following matrix edges have weighs which represents the values in the matrix
 Similar to **adjacency matrix**, which represents graphs in a matrix, **adjacency list** represents graphs in a dictionary. The keys are the vertices and the paired values are lists of its edges.
 
 ![Adjacency List](./adjacency_list.png)
+
+# Graphs Big O

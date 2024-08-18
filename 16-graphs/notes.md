@@ -51,3 +51,21 @@ When comparing **space complexity**:
 - `Adjacency list` stores only the edges it's connected to and makes it `O(|V|+|E|)`, number of vertices plus number of edges
 
 ![Big O Graphs: Adjacency Matrix vs List](./matrix_v_list.png)
+
+When **adding a vertex** like `F` below:
+
+- `Adjacency matrix` is complex as it requires rewriting the entire matrix to add a new row and column; thus, `O(|V|^2)` or number of vertices squared
+- `Adjacency list` can be simple as it is just a dictionary at a space complexity of `O(1)`
+
+![Big O Graphs: Adding Vertex](./matrix_v_list_add_vertex.png)
+
+When **adding an edge** `F` to `B` like below, both are `O(1)`:
+
+![Big O Graphs: Adding Vertex](./matrix_v_list_add_edge.png)
+
+As for other graph operations:
+
+- **To remove edges**: matrix is `O(1)` and list is `O(|E|)` of number of edges we need to loop through to find and remove
+- **To remove vertices**: matrix is `O(|V|^2)`, number of vertices squared, since we have to rewrite the whole matrix and list is `O(|V| + |E|)`, number of vertices + number of edges to loop through to find and remove the vertex as the edges in other vertices
+
+Overall, **adjacency list** is much more efficient and preferable especially from a space complexity perspective. For instance, imagine building Facebook with matrix graphs and you have 1B users (i.e. vertices), you'd have 1B rows and 1B columns even if each user has only thousand friends (e.g. 1000 of 1B columns will be 1's and the rest 0's)

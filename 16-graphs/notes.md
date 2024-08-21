@@ -69,3 +69,21 @@ As for other graph operations:
 - **To remove vertices**: matrix is `O(|V|^2)`, number of vertices squared, since we have to rewrite the whole matrix and list is `O(|V| + |E|)`, number of vertices + number of edges to loop through to find and remove the vertex as the edges in other vertices
 
 Overall, **adjacency list** is much more efficient and preferable especially from a space complexity perspective. For instance, imagine building Facebook with matrix graphs and you have 1B users (i.e. vertices), you'd have 1B rows and 1B columns even if each user has only thousand friends (e.g. 1000 of 1B columns will be 1's and the rest 0's)
+
+# Graphs Constructor
+
+```python
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
+
+    def add_vertex(self, vertex):
+        if vertex not in self.adj_list.keys():
+            self.adj_list[vertex] = []
+            return True
+        return False
+
+    def print_graph(self):
+        for vertex in self.adj_list:
+            print(vertex,':', self.adj_list[vertex])
+```

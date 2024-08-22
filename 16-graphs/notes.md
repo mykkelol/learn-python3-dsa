@@ -83,6 +83,14 @@ class Graph:
             return True
         return False
 
+    def add_edge(self, v1, v2):
+        keys = self.adj_list.keys()
+        if v1 in keys and v2 in keys:
+            self.adj_list[v1].append(v2)
+            self.adj_list[v2].append(v1)
+            return True
+        return False
+
     def print_graph(self):
         for vertex in self.adj_list:
             print(vertex,':', self.adj_list[vertex])

@@ -99,6 +99,14 @@ class Graph:
             return True
         return False
 
+    def remove_vertex(self, vertex):
+        if vertex in self.adj_list:
+            for v in self.adj_list:
+                self.adj_list[v].remove(vertex)
+            del self.adj_list[vertex]
+            return True
+        return False
+
     def print_graph(self):
         for vertex in self.adj_list:
             print(vertex,':', self.adj_list[vertex])

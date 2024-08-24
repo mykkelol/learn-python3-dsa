@@ -1,6 +1,8 @@
 # Graphs
 
-Graphs are seen before—things like linked list and trees are forms of graphs but they have limitations such as pointing to only one other node and two nodes at a time, respectively. A graph consists of the following:
+Graphs are data structures used when representing entities and relationships between them. We've seen graphs before—things like linked list and trees are forms of graphs but they have limitations such as pointing to only one other node and two nodes at a time, respectively.
+
+A graph consists of the following:
 
 - **Vertex (vertices)** - also known as 'nodes' with values. Vertices can connect to one or many relationships with no limitations
 - **Edge** - also known as 'connections' to connect vertices together. Edges can be directional or bi-directional
@@ -100,9 +102,9 @@ class Graph:
         return False
 
     def remove_vertex(self, vertex):
-        if vertex in self.adj_list:
-            for v in self.adj_list:
-                self.adj_list[v].remove(vertex)
+        if vertex in self.adj_list.keys():
+            for other_vertex in self.adj_list[vertex]:
+                self.adj_list[other_vertex].remove(vertex)
             del self.adj_list[vertex]
             return True
         return False

@@ -11,8 +11,19 @@ class Graph:
     def add_edge(self, v1, v2):
         vertices = self.adj_list.keys()
         if v1 in vertices and v2 in vertices:
-            self.adj_list[v1].append[v2]
-            self.adj_list[v2].append[v1]
+            self.adj_list[v1].append(v2)
+            self.adj_list[v2].append(v1)
+            return True
+        return False
+    
+    def remove_edge(self, v1, v2):
+        vertices = self.adj_list.keys()
+        if v1 in vertices and v2 in vertices:
+            try:
+                self.adj_list[v1].remove(v2)
+                self.adj_list[v2].remove(v1)
+            except ValueError:
+                pass
             return True
         return False
 

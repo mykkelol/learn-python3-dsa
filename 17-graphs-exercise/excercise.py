@@ -26,6 +26,16 @@ class Graph:
                 pass
             return True
         return False
+    
+    def remove_vertex(self, vertex):
+        vertices = self.adj_list.keys()
+        if vertex in vertices:
+            for current_vertex in self.adj_list:
+                if vertex in self.adj_list[current_vertex]:
+                    self.adj_list[current_vertex].remove(vertex)
+            del self.adj_list[vertex]
+            return True
+        return False
 
     def print_graph(self):
         for vertex in self.adj_list:

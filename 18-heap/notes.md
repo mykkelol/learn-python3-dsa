@@ -19,4 +19,11 @@ Heaps are stored in a list, so a node class isn't needed like trees. However, he
 
 ![Heap at index 1](./heap-storing-index-1.png)
 
+Since the heap integers are added to lists in a contiguous pattern, starting with index 1 makes the math simple. Examples:
+
+- Finding left child: `2 * parent_index`
+- Finding right child: `2 * parent_index + 1`
+- Finding parent of left child: `child_index / 2` (assume index 6, then 3)
+- Finding parent of right child: `child_index / 2` (assume index 7, then 3 since integer division drops .5 of 3.5)
+
 ### Root at index 0

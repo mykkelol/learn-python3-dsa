@@ -7,3 +7,16 @@ Heap is a binary search tree that has its numbers distributed in a different way
 - it doesn't matter where the lowest values are in the tree as long as it is a value less than or equal to its parents
 
 This means that heaps are not great for searching, but it's great for keeping track of the highest values at the top and quickly remove it
+
+# How heaps are stored
+
+Heaps are stored in a list, so a node class isn't needed like trees. However, heaps only store integers in the list and said integers can be stored two ways:
+
+- root at index 0
+- root at index 1
+
+### Root at index 1
+
+![Heap at index 1](./heap-storing-index-1.png)
+
+### Root at index 0

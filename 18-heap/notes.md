@@ -56,3 +56,13 @@ In above heap, insertion can happen using `while` loop with the following (assum
 
 - insert the value at the next contiguous index open even if the value is greater than the current parent (i.e. .append(100) which would be under 72)
 - in the while loop, keep swapping with parent using integer division and exit when either these two conditions are met: top of the tree reached (i.e. index 1) or child is less than its parent
+
+```python
+    def _insert(self, value):
+        self.heap.append(value)
+        current = len(self.heap) - 1
+
+        while current > 0 and self.heap[current] > self.heap[self._parent(current)]:
+            self._swap(current, self._parent(current))
+            current = self._parent(current)
+```

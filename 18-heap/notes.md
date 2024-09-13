@@ -10,7 +10,7 @@ This means that heaps are not great for searching, but it's great for keeping tr
 
 # How heaps are stored
 
-Heaps are stored in a list, so a node class isn't needed like trees. However, heaps only store integers in the list and said integers can be stored two ways:
+Heaps are stored in a list, so a **node class** isn't needed like trees. However, heaps only store integers in the list and said integers can be stored two ways:
 
 - root at index 0
 - root at index 1
@@ -27,6 +27,26 @@ Since the heap integers are added to lists in a contiguous pattern, starting wit
 - Finding parent of right child: `child_index / 2` (assume index 7, then 3 since integer division drops .5 of 3.5)
 
 ### Root at index 0
+
+When leading with index 0 for heaps, we'd need to move over one index. Below, notice in every equation, we simply moved one index from formulas used when leading with index 1:
+
+```python
+class MaxHeap:
+    def __init__(self):
+        self.heap = []
+
+    def _left_child(self, index):
+        return 2 * index + 1
+
+    def _right_child(self, index):
+        return 2 * index + 2
+
+    def _parent(self, index):
+        return (index - 1) + 2
+
+    def _swap(self, index1, index2):
+        self.heap[index1], self.heap[index2] = self.heap[index2], self.heap[index1]
+```
 
 # Insert value into heap
 

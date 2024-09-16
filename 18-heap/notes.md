@@ -69,4 +69,23 @@ In above heap, insertion can happen using `while` loop with the following (assum
 
 # Remove value from heap
 
-In heaps, only the top of the tree is removed regardless if it's a max or a min heap.
+In heaps, three things happen when removing a value:
+
+- Only the top of the tree is removed regardless if it's a max or a min heap
+- When removing, the last index is swapped with the top of three
+- After the last index is pushed to the top, `sink_down` helper method is used to rearrange the heap
+
+```python
+    def _remove(self):
+        if len(self.heap) == 0:
+            return None
+
+        if len(self.heap) == 1:
+            return self.heap.pop()
+
+        max_heap = self.heap[0]
+        self.heap[0] = self.heap.pop()
+        self._sink_down(0)
+
+        return max_heap
+```

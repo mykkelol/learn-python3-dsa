@@ -76,6 +76,9 @@ In heaps, three things happen when removing a value:
 - After the last index is pushed to the top, `sink_down` helper method is used to rearrange the heap
 
 ```python
+    def _sink_down(self, index):
+        sorted(self.heap, reverse=True)
+
     def _remove(self):
         if len(self.heap) == 0:
             return None

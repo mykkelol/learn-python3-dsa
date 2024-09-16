@@ -66,3 +66,7 @@ In above heap, insertion can happen using `while` loop with the following (assum
             self._swap(current, self._parent(current))
             current = self._parent(current)
 ```
+
+# Remove value from heap
+
+In heaps, only the top of the tree is removed regardless if it's a max or a min heap.

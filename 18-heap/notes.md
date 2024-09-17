@@ -77,7 +77,23 @@ In heaps, three things happen when removing a value:
 
 ```python
     def _sink_down(self, index):
-        sorted(self.heap, reverse=True)
+        max_index = index
+        while True:
+            left_index = self._left_child(max_index)
+            right_index = self._right_child(max_index)
+            left_value = self._heap[left_index]
+            right_value = self._heap[right_index]
+
+            if left_value and self._heap[max_index] < self._heap[left_index]:
+                max_index = left_index
+
+            if right_value and self._heap[max_index] < self._heap[right_index]:
+                max_index = right_index
+
+            if max_index is not index:
+                self._swap(index, max_index)
+                return
+
 
     def _remove(self):
         if len(self.heap) == 0:

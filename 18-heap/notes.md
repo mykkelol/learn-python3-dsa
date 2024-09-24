@@ -86,10 +86,10 @@ In heaps, three things happen when removing a value:
             left_value = self._heap[left_index]
             right_value = self._heap[right_index]
 
-            if len(self.heap) < left_index and left_value > max_value:
+            if left_index < len(self.heap) and left_value > max_value:
                 max_index = left_index
 
-            if len(self.heap) < right_index and right_value > max_value:
+            if right_index < len(self.heap) and right_value > max_value:
                 max_index = right_index
 
             if max_index is not index:

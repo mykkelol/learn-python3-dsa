@@ -112,4 +112,10 @@ In heaps, three things happen when removing a value:
 
         return max_heap
 ```
+
 # Priority Queue & Big O
+
+Priority queue is when a specific condition is prioritized such as the highest priority queue is the max value that must be removed. Priority queue are great problems for heaps to use as a solution since removing the max value in a max heap is really efficient but
+technically, all other data structures could be utilized as well for priority queues:
+
+Heap, on the other hand, allows priority queue to achieve O(log n).

@@ -118,4 +118,11 @@ In heaps, three things happen when removing a value:
 Priority queue is when a specific condition is prioritized such as the highest priority queue is the max value that must be removed. Priority queue are great problems for heaps to use as a solution since removing the max value in a max heap is really efficient but
 technically, all other data structures could be utilized as well for priority queues:
 
-Heap, on the other hand, allows priority queue to achieve O(log n).
+| Data Structure     | Big O | Description                                                                                                                                                              |
+| ------------------ | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Linked List        | O(n)  | requires traversing through the entire linked list until the max value is reached                                                                                        |
+| List               | O(n)  | similar issue as linked list                                                                                                                                             |
+| Dictionary         | O(n)  | requires traversing through the keys. O(1) is achievable if max value is already known which is never the case in priority queue and is impossible                       |
+| Binary Search Tree | O(n)  | could achieve log(n) like heap if the tree is balanced. But generally degrades to O(n) if the tree is unbalanced (when the tree keeps branching/appending the same path) |
+
+Heap, on the other hand, allows priority queue to achieve O(log n). Similar to BST, but heaps is more efficient since traversing for insertion or extraction would only ever be as long as the tree since heaps are always balanced (where max value are always at the top and extraction swaps with the bottom and is sinked down).

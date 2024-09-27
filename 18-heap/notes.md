@@ -125,4 +125,4 @@ technically, all other data structures could be utilized as well for priority qu
 | Dictionary         | O(n)  | requires traversing through the keys. O(1) is achievable if max value is already known which is never the case in priority queue and is impossible                       |
 | Binary Search Tree | O(n)  | could achieve log(n) like heap if the tree is balanced. But generally degrades to O(n) if the tree is unbalanced (when the tree keeps branching/appending the same path) |
 
-Heap, on the other hand, allows priority queue to achieve O(log n). Similar to BST, but heaps is more efficient since traversing for insertion or extraction would only ever be as long as the tree since heaps are always balanced (where max value are always at the top and extraction swaps with the bottom and is sinked down).
+Heap, on the other hand, allows priority queue to achieve O(log n). Unlike BST, which can become unbalanced, heaps are inherently complete/balanced. Thus, more efficient since traversing for insertion or extraction would only ever be as long as the height of the tree.

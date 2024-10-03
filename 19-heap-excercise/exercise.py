@@ -53,3 +53,15 @@ class MaxHeap:
 
         return max_value
         
+class MinHeap:
+    def __init__(self):
+        self.heap = []
+
+    def _left_child(self, index):
+        return 2 * index + 1
+    
+    def _right_child(self, index):
+        return 2 * index + 2
+    
+    def _parent(self, index):
+        return (index - 1) // 2

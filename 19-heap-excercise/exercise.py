@@ -69,6 +69,24 @@ class MinHeap:
     def _swap(self, index1, index2):
         self.heap[index1], self.heap[index2] = self.heap[index2], self.heap[index1]
 
+    def _sink_down(self, index):
+        min_index = index
+        while True:
+            left_child = self._left_child(index)
+            right_child = self._right_child(index)
+
+            if left_child < len(self.heap) and self.heap[left_child] < self.heap[min_index]:
+                min_index = left_child
+            
+            if right_child < len(self.heap) and self.heap[right_child] < self.heap[min_index]:
+                min_index = right_child
+
+            if min_index is not index:
+                self._swap(index, min_index)
+                index = min_index
+            else:
+                return
+
     def insert(self, value):
         self.heap.append(value)
         current = len(self.heap) - 1

@@ -72,14 +72,14 @@ class MinHeap:
     def _sink_down(self, index):
         min_index = index
         while True:
-            left_child = self._left_child(index)
-            right_child = self._right_child(index)
+            left_index = self._left_child(index)
+            right_index = self._right_child(index)
 
-            if left_child < len(self.heap) and self.heap[left_child] < self.heap[min_index]:
-                min_index = left_child
+            if left_index < len(self.heap) and self.heap[left_index] < self.heap[min_index]:
+                min_index = left_index
             
-            if right_child < len(self.heap) and self.heap[right_child] < self.heap[min_index]:
-                min_index = right_child
+            if right_index < len(self.heap) and self.heap[right_index] < self.heap[min_index]:
+                min_index = right_index
 
             if min_index is not index:
                 self._swap(index, min_index)

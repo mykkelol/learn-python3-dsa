@@ -11,6 +11,9 @@ class MaxHeap:
     def _parent(self, index):
         return (index - 1) // 2
     
+    def _swap(self, index1, index2):
+        self.heap[index1], self.heap[index2] = self.heap[index2], self.heap[index1]
+    
     def _sink_down(self, index):
         max_index = index
         while True:
@@ -25,7 +28,7 @@ class MaxHeap:
                 max_index = right_index
 
             if max_index != index:
-                self.heap[index], self.heap[max_index] = self.heap[max_index], self.heap[index]
+                self._swap(index, max_index)
                 index = max_index
             else:
                 return

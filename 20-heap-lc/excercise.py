@@ -64,11 +64,11 @@ def find_kth_smallest(nums, k):
     return max_heap.remove()
 
 def stream_max(nums):
-    max_nums = []
     max_heap = MaxHeap()
+    max_stream = []
 
     for num in nums:
         max_heap.insert(num)
-        max_nums.append(max_heap.heap[0])
+        max_stream.append(max_heap.heap[0])
 
-    return max_nums
+    return max_stream

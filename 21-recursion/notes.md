@@ -36,3 +36,14 @@ funcOne()
 # two
 # one
 ```
+
+A more common recursive case is factorial, where n input returns the product of the numbers before or equal to n:
+
+```python
+def factorial(n):
+    if n === 1:
+        return 1
+    return n * factorial(n - 1)
+```
+
+The call stack for factorial would return 1, 2, 6, and finally 24
